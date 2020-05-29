@@ -32,24 +32,25 @@ int main()
 					break;
 				}
 			}
-			//cout<<start<<" "<<arr[0]<<" "<<arr[1]<<" "<<arr[2]<<" "<<end<<endl;
+		
 			if(end-start>3&&(end-start)%3==0)
 			{
 				flag=true;
+				
+				
 				for(int i=start+3;i<end;i++)
 				{
 					cout<<dna[i];
 				}
+				
 				cout<<endl;
 			}
-		
-			
-			
 			start+=2;
 		}
+		
 		if(flag==false)
 		{
-			cout<<"No gene\n";
+			cout<<"No gene.\n";
 		}
 		
 	}
