@@ -3,8 +3,8 @@
 using namespace std;
 
 struct Container {
-    int index; // ³fÂd½s¸¹
-    int weight; // ³fÂd­«¶q
+    int index; // è²¨æ«ƒç·¨è™Ÿ
+    int weight; // è²¨æ«ƒé‡é‡
     Container *next; 
 };
 Container* insert(Container* head, int index, int weight)
@@ -67,17 +67,17 @@ Container* insert(Container* head, int index, int weight)
 }
 Container* remove(Container* head, int max_weight)
 {
-	bool flag=true;
+	
 	if(head->weight==max_weight)
 	{
 		Container *temp=head;
 		head=head->next;
 		delete temp;
-		flag=false;
+		return head;
 	}
 	Container *cur = head;
     
-    while (cur!=nullptr&&flag==true) {
+    while (cur->next->!=nullptr) {
         
 		if(cur->next->weight==max_weight&&cur->next->next==nullptr)
 		{
