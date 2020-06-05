@@ -75,19 +75,37 @@ Container* remove(Container* head, int max_weight)
 		delete temp;
 		return head;
 	}
+	
+	Container *cu=head;
+	Container *tail;
+	while(cu->next!=nullptr)
+	{
+		tail=cu;
+		cu=cu->next;
+	}
+	if(tail->next->weight==max_weight)
+	{
+		Container *temp=tail->next;
+		tail->next=nullptr;
+		delete temp;
+		
+	}
+	
 	Container *cur = head;
     
-    while (cur->next->!=nullptr) {
-        
+    while (cur->next!=nullptr) {
+        //cout<<cur->next->index<<" "<<cur->next->weight<<endl;
 		if(cur->next->weight==max_weight&&cur->next->next==nullptr)
 		{
+			//cout<<"A"<<endl;
 			Container *temp=cur->next;
-			cur->next=nullptr;
+			cur->next=cur->next->next;
 			delete temp;
 			
 		}
 		else if(cur->next->weight==max_weight)
 		{
+			//cout<<"B"<<endl;
 			Container *temp=cur->next;
 			cur->next=cur->next->next;
 			delete temp;
